@@ -1,8 +1,8 @@
 <!-- Instruções para agentes AI / Copilot - geradas automaticamente -->
-# Guia Rápido para Agentes AI neste repositório
 
-Este repositório é uma pequena aplicação cliente (HTML/CSS/JS) que implementa um catálogo de materiais.
-As instruções abaixo ajudam um agente a ser imediatamente produtivo aqui: onde olhar, quais convenções seguir, e como testar mudanças localmente.
+
+# Este repositório é uma pequena aplicação cliente (HTML/CSS/JS) que implementa um catálogo de materiais.
+As instruções abaixo ajudam onde olhar, quais convenções seguir, e como testar mudanças localmente.
 
 **Visão Geral (big picture)**
 - **Arquivos principais**: `erpMaterias.html` (view), `erp.js` (comportamento), `erp.css` (estilos e design tokens).
@@ -42,16 +42,3 @@ As instruções abaixo ajudam um agente a ser imediatamente produtivo aqui: onde
 **Integrações e pontos de extensão**
 - Atualmente não há integração externa (APIs ou armazenamento). Se for necessário persistir, integrate com `localStorage` ou um endpoint REST — observe onde `materiais` é manipulado (`adicionarMaterial`, `deletarMaterial`, `editarMaterial`).
 - Evite mudar IDs dos elementos existentes (`nomeMaterial`, `btnAdicionar`, `btnDeletarTudo`, `listaMateriais`, `mensagem`) sem atualizar `erp.js`.
-
-**O que um agente AI pode alterar com segurança**
-- Refatorações locais dentro de `erp.js` que preservem APIs DOM (IDs) e a função `renderizarLista()`.
-- Melhora na UX (substituir `prompt/confirm` por modais) desde que as funcionalidades originais permaneçam testáveis manualmente.
-
-**O que evitar / observações**
-- Não introduza complexidade de build sem necessidade — o repositório foi projetado para ser estático e simples.
-- Mudanças que alterem o fluxo de estado (por ex. migrar `materiais` para backend) devem incluir instruções claras de reversão e testes manuais.
-
-Se algo estiver ambíguo ou você quiser que eu detalhe um trecho (ex.: transformar `prompt()` em modal ou adicionar persistência com `localStorage`), diga qual abordagem prefere e eu atualizo o arquivo com um PR.
-
----
-Arquivo criado/atualizado por agente AI. Peça por iterações ou exemplos de alteração específicos.
