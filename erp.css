@@ -1,0 +1,302 @@
+/* Variáveis CSS globais - Design System SAP S/4HANA */
+:root {
+    /* Cores SAP S/4HANA */
+    --sap-blue: #0050df;
+    --sap-blue-dark: #003fb0;
+    --sap-blue-light: #e8f0ff;
+    --sap-green: #107e3e;
+    --sap-green-light: #e6f5ed;
+    --sap-orange: #f57c00;
+    --sap-red: #e74c3c;
+    --sap-red-light: #fadbd8;
+    --sap-gray-1: #f5f5f5;
+    --sap-gray-2: #e8e8e8;
+    --sap-gray-3: #6b7280;
+    --sap-gray-4: #374151;
+    --bg: #f0f3f7;
+    --card: #ffffff;
+    --text-dark: #1a202c;
+    --text-muted: #6b7280;
+    /* Espaçamento */
+    --radius: 6px;
+    --pad: 18px;
+    /* Tipografia */
+    --font-sans: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    /* Transições */
+    --transition: all 0.2s ease-in-out;
+}
+
+* {
+    /* Box model: padding/border inclusos na largura/altura */
+    box-sizing: border-box
+}
+
+html, body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-sans);
+    background: linear-gradient(135deg, var(--bg), #f8fafb);
+    color: var(--text-dark);
+    -webkit-font-smoothing: antialiased;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Topbar - Cabeçalho superior azul S/4HANA */
+.topbar {
+    background: linear-gradient(135deg, var(--sap-blue) 0%, var(--sap-blue-dark) 100%);
+    padding: 18px 0;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 50, 176, 0.2);
+}
+
+.topbar-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px
+}
+
+.topbar h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.2px
+}
+
+/* Container - Card principal com sombra */
+.container {
+    max-width: 920px;
+    margin: 22px auto;
+    background: var(--card);
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 50, 176, 0.08);
+    border: 1px solid rgba(0, 80, 223, 0.06);
+}
+
+/* Welcome area - Boas-vindas e dados do usuário */
+.welcome-area {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px
+}
+
+.greeting {
+    margin: 0;
+    font-weight: 700;
+    color: #0f3b61
+}
+
+.auth {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.9rem
+}
+
+.auth-id {
+    font-weight: 700;
+    color: #284b6b
+}
+
+/* Form area - Formulário input + botão */
+.form-area {
+    margin-top: 16px
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+    align-items: center
+}
+
+.input-row input {
+    flex: 1;
+    padding: 12px 14px;
+    border-radius: var(--radius);
+    border: 1px solid #d0d8e8;
+    font-size: 1rem;
+    outline: none;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    background: var(--card);
+    color: var(--text-dark);
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.input-row input:focus {
+    border-color: var(--sap-blue);
+    box-shadow: 0 0 0 3px var(--sap-blue-light), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.input-row input:hover:not(:focus) {
+    border-color: #b5c3d8;
+    background: #fafbfc;
+}
+
+/* Botões - Estilos base e variações */
+.btn {
+    padding: 10px 16px;
+    border-radius: var(--radius);
+    border: 0;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 8px rgba(0, 80, 223, 0.15);
+    transition: var(--transition);
+    font-family: inherit;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 80, 223, 0.25);
+}
+
+.btn:focus {
+    outline: 2px solid var(--sap-blue);
+    outline-offset: 2px;
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 80, 223, 0.2);
+}
+
+.primary {
+    background: var(--sap-blue);
+    color: white;
+}
+
+.primary:hover {
+    background: var(--sap-blue-dark);
+}
+
+.danger {
+    background: var(--sap-red);
+    color: white;
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.15);
+}
+
+.danger:hover {
+    background: #c0392b;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.25);
+}
+
+/* Mensagem - Feedback para o usuário */
+.mensagem {
+    margin: 8px 0 0 0;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--sap-blue);
+    min-height: 20px;
+}
+
+/* Catálogo - Lista de materiais cadastrados */
+.catalogo {
+    margin-top: 18px
+}
+
+.catalogo h2 {
+    margin: 0 0 10px 0;
+    color: #123b5b;
+    font-size: 1.05rem
+}
+
+.lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 14px;
+    background: var(--sap-gray-1);
+    border-radius: var(--radius);
+    border: 1px solid var(--sap-gray-2);
+    transition: var(--transition);
+}
+
+.item:hover {
+    background: #ffffff;
+    border-color: #d0d8e8;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.item .nome {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.item .acoes {
+    display: flex;
+    gap: 8px;
+    align-items: center
+}
+
+/* Icon buttons - Edit e Delete */
+.icon-btn {
+    padding: 6px 12px;
+    border-radius: var(--radius);
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    background: transparent;
+    transition: var(--transition);
+    font-family: inherit;
+}
+
+.icon-btn:focus {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+}
+
+.icon-btn.edit {
+    color: var(--sap-blue);
+    border: 1px solid rgba(0, 80, 223, 0.15);
+    background: var(--sap-blue-light);
+}
+
+.icon-btn.edit:hover {
+    background: rgba(0, 80, 223, 0.2);
+    border-color: rgba(0, 80, 223, 0.3);
+}
+
+.icon-btn.delete {
+    color: var(--sap-red);
+    border: 1px solid rgba(231, 76, 60, 0.15);
+    background: var(--sap-red-light);
+}
+
+.icon-btn.delete:hover {
+    background: rgba(231, 76, 60, 0.2);
+    border-color: rgba(231, 76, 60, 0.3);
+}
+
+/* Footer actions - Botões no rodapé */
+.footer-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 18px
+}
+
+/* Responsividade - Mobile (max-width: 660px) */
+@media (max-width: 660px) {
+    .input-row {
+        flex-direction: column;
+        align-items: stretch
+    }
+
+    .footer-actions {
+        justify-content: center
+    }
+}

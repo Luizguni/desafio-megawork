@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema de gestão de catálogo de materiais SAP MM">
+    <link rel="stylesheet" href="erp.css">
+    <title>ERP Megawork - Catálogo de Materiais</title>
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <h1>Catálogo de Materiais SAP (MM)</h1>
+        </div>
+    </header>
+
+    <!-- Área principal (card branco) -->
+    <main class="container">
+        <!-- Boas-vindas e informações do usuário -->
+        <section class="welcome-area">
+            <p class="greeting">Olá, bem-vindo ao seu catálogo de materiais SAP MM.</p>
+            <!-- ID vinculado ao JavaScript para identificar o usuário -->
+            <p class="auth">Usuário autenticado: <span class="auth-id">Luiz Guni</span></p>
+        </section>
+
+        <!-- Formulário para adicionar materiais -->
+        <section class="form-area">
+            <!-- Input + Botão lado a lado -->
+            <div class="input-row">
+                <!-- Label semântico para melhor acessibilidade -->
+                <label for="nomeMaterial">Nome do Material:</label>
+                <!-- ID: nomeMaterial - vinculado ao JavaScript; required para validação HTML5 -->
+                <input id="nomeMaterial" type="text" placeholder="Digite o nome do material" required minlength="1"
+                    autocomplete="off" aria-label="Nome do material a adicionar" />
+                <!-- ID: btnAdicionar - dispara função de adicionar ao clicar -->
+                <button id="btnAdicionar" class="btn primary" aria-label="Adicionar novo material ao catálogo">Adicionar
+                    Material</button>
+            </div>
+            <!-- Mensagem de feedback (sucesso/erro) com aria-live para anúncio automático -->
+            <p id="mensagem" class="mensagem" aria-live="polite" role="status"></p>
+        </section>
+
+        <!-- Lista de materiais cadastrados -->
+        <section class="catalogo">
+            <h2>Materiais Cadastrados</h2>
+            <!-- ID: listaMateriais - JavaScript adiciona <li> items aqui dinamicamente -->
+            <ul id="listaMateriais" class="lista"></ul>
+        </section>
+
+        <!-- Botões de ação no rodapé -->
+        <footer class="footer-actions">
+            <!-- ID: btnDeletarTudo - deleta todos os materiais com confirmação dupla -->
+            <button id="btnDeletarTudo" class="btn danger" aria-label="Deletar todo o catálogo de materiais">Deletar
+                Catálogo</button>
+        </footer>
+    </main>   
+    <script src="erp.js"></script>
+</body>
+
+</html>
