@@ -26,7 +26,7 @@ Permite inserir, editar e deletar materiais em tempo real, utilizando HTML, CSS 
 ## Como Executar
 1. Baixe o projeto.
 2. Extraia o conteúdo.
-3. Abra o arquivo `index.html` em qualquer navegador.
+3. Abra o arquivo `erpMateriais.html` em qualquer navegador.
 
 ## Tecnologias Utilizadas
 - HTML
